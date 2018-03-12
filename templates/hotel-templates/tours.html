@@ -1,0 +1,127 @@
+{% extends "hotel-templates/base.html" %}
+
+{% block title %} namanbastar  {% endblock %}
+
+{% block content %}
+  
+ <!-- Header  Inner style-->
+
+{% if  '/naman-bastar/' in request.get_full_path %}
+
+ <section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header2.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Spiritual Tours</h2>
+ 	</div>
+ </section>
+
+{% else %}
+
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header4.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Spiritual Tours</h2>
+ 	</div>
+ </section>
+
+
+{% endif %}
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/home/naman-bastar/">Home</a></li>
+ 			<li class="active">Spiritual Tours</li>
+ 		</ol>
+ 	</div>
+ </section>
+<!-- Header  Slider style-->
+ 
+<!-- Family Fun style-->
+ <section class="clearfix news-wrapper">
+    <div class="container clearfix common-pad">
+     <div class="row">
+       
+         <div class="m-traking">
+         
+         
+         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 family-img pull-right">
+             <div class="image-gallery ntracing-images">
+             <div class="grid-sizer"></div>
+             <div class="single-gallery single-r-gallery anim-5-all masonryImage  span-10">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image1 }}">
+						<img src="/media/{{ tours.image1 }}" alt="">		
+				   </a>				
+					</div>
+               </div>
+             <div class="single-gallery anim-5-all masonryImage  span-7">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image2 }}">
+						<img src="/media/{{ tours.image2 }}" alt="">		
+				   </a>				
+					</div>
+               </div>
+            <!--  <div class="single-gallery single-r-gallery anim-5-all masonryImage  span-11">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image3 }}">
+						<img src="/media/{{ tours.image3 }}" alt="">		
+				   </a>				
+					</div>
+               </div>   -->
+                 
+               <div class="single-gallery anim-5-all masonryImage  span-12">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image4 }}">
+						<img src="/media/{{ tours.image4 }}" alt="">		
+				   </a>				
+					</div>
+               </div> 
+                 
+                 <div class="single-gallery single-r-gallery anim-5-all masonryImage  span-13">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image5 }}">
+						<img src="/media/{{ tours.image5 }}" alt="">				
+				   </a>		
+					</div>
+               </div> 
+                 <div class="single-gallery single-r-gallery anim-5-all masonryImage  span-13">
+               <div class="img-holder hover">
+               <a class="fancybox" rel="tag" href="/media/{{ tours.image6 }}">
+						<img src="/media/{{ tours.image6 }}" alt="">				
+				   </a>		
+					</div>
+               </div> 
+             
+             
+             </div>
+             </div>
+             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 pull-right">
+             <div class="maount-content">
+             <h2>{{ tours.title }}</h2>
+             <p>{{ tours.description_para1 }}</p>
+            
+             <h5>{{ tours.description_para2 }}</h5>
+             <p>{{ tours.description_para3|linebreaksbr }}</p>
+			 <h3>Spiritual Tours.....<br>
+				Limited Seats are Available<br> 
+				Call Us : 94242 86000</h3>
+			 </div>
+             
+             </div>
+             
+             
+         </div>
+        </div>
+     
+     </div>
+    </section>   
+<!-- Family Fun style-->
+    
+  
+ 
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+	
+</div>
+    
+ <!-- Welcome banner  style-->
+    
+ {% endblock %}

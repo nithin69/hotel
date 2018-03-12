@@ -1,0 +1,235 @@
+{% extends "hotel-templates/base.html" %}
+{% load ratings %}
+{% block title %} namanbastar  {% endblock %}
+
+
+{% block content %}
+  
+ <!-- Header  Inner style-->
+
+
+{% if  '/naman-bastar/' in request.get_full_path %}
+
+ <section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header2.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">{{single.title}}</h2>
+ 	</div>
+ </section>
+
+{% else %}
+
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header4.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">{{single.title}}</h2>
+ 	</div>
+ </section>
+
+
+{% endif %}
+
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/namanbastar/">Home</a></li>
+ 			<li class="active">{{ single.title }}</li>
+ 		</ol>
+ 	</div>
+ </section>
+<!-- Header  Slider style-->
+    
+
+<!-- News style-->
+  <section class="container clearfix common-pad-inner">
+   <div class="row">
+      <div class="col-md-4 col-md-push-8">
+       
+          <div class="single-sidebar-widget sroom-sidebar">         
+              
+              <!-- Booking Form style-->
+              <div class="book-r-form">
+              
+                  <div class="room-price">
+                  <p>Write a Review</p>
+                  
+                  </div>
+                  
+                  <div class="book-form">
+			{% if done %}
+
+<p>Thank you for your Comment. Our concern Authorities will review it.</p>
+
+
+{% else %}
+		  <form action="/room/{{single.slug}}/" method="post">
+		{% csrf_token %}
+		{{booking_form.errors}}
+                  <div class="col-md-12"><b>Name</b><input class="form-control" name="name" placeholder="Enter Your Name" type="text"></div><br><br><br><br>
+                  <div class="col-md-12"><b>Email</b><input type="email" class="form-control" name="email" placeholder="Enter Your Email"></div><br><br><br><br>
+                  <div class="col-md-12"><b>Phone</b><input class="form-control" name="phone" placeholder="Enter Your Mobile Number" type="text"></div><br><br><br><br>
+		 <div class="col-md-12"><b>Comment</b><textarea class="form-control" name="comment" placeholder="Enter Your Comment" type="text"></textarea></div><br>
+		<input class="form-control" name="room_type" value="{{ single.id }}" placeholder="Enter Your Name" type="hidden"><br>
+                      <br><br>
+                  <div class="col-md-12"><div class="chk-button"><button type="submit" class="res-btn">Submit</button></div></div>
+		
+</form>
+
+{% endif %}
+                  
+                  </div>
+              
+              </div>
+              
+              
+          </div>
+        
+       </div>
+      
+      <div class="col-md-8 col-md-pull-4">
+       
+       <div class="single-room-wrapper">
+         <!-- Rooms Slider style-->
+          <div class="room-slider-wrapper">
+           <div class="single-r-wrapper">
+              <div class="single-sl-room">
+             <div class="owl-itemm" data-hash="zero"><img src="/media/{{single.image1}}" alt=""></div>
+             <div class="owl-itemm" data-hash="one"><img src="/media/{{single.image2}}" alt=""></div>
+              <div class="owl-itemm" data-hash="two"><img src="/media/{{single.image3}}" alt=""></div>
+                  <div class="owl-itemm" data-hash="three"><img src="/media/{{single.image4}}" alt=""></div>
+               <div class="owl-itemm" data-hash="four"><img src="/media/{{single.image5}}" alt=""></div>   
+            </div>  
+             
+          <a class="button secondary url" href="#zero"><img src="/media/{{single.image1}}" alt=""></a> 
+          <a class="button secondary url" href="#one"><img src="/media/{{single.image2}}" alt=""></a> 
+          <a class="button secondary url" href="#two"><img src="/media/{{single.image3}}" alt=""></a> 
+          <a class="button secondary url" href="#three"><img src="/media/{{single.image4}}" alt=""></a> 
+          <a class="button secondary url" href="#four"><img src="/media/{{single.image5}}" alt=""></a> 
+                  
+               </div>
+              
+              </div>
+           
+          <!-- Rooms Slider style-->
+           
+           <!-- Description of Room style-->
+           <div class="room-dec-wrapper">
+            <h2>Description of Room</h2>
+               <p>{{ single.description }}
+			  </div>
+           <!-- Description of Room style-->
+           
+            <!-- Room Facilities style-->
+           <div class="room-fac-wrapper">
+           <h2>Room Facilities</h2>
+              <div class="row">
+               <div class="ro-facilitie">
+               <ul class="clearfix">
+               <li><div class="facilitie-i-box">
+                           <h3>TV LED</h3>
+                           <span><img src="/static/hotel-static/images/rooms/icon1.gif" alt=""></span>
+                       </div>
+                   </li>
+               <li><div class="facilitie-i-box">
+                           <h3>Dresser</h3>
+                           <span><img src="/static/hotel-static/images/rooms/icon2.gif" alt=""></span>
+                       </div>
+                   </li>
+                   <li><div class="facilitie-i-box">
+                           <h3>Fridge</h3>
+                           <span><img src="/static/hotel-static/images/rooms/icon3.jpg" alt=""></span>
+                       </div>
+                   </li>
+                   <li><div class="facilitie-i-box">
+                           <h3>wi-fi service</h3>
+                           <span><img src="/static/hotel-static/images/rooms/icon4.gif" alt=""></span>
+                       </div>
+                   </li>
+                   <li><div class="facilitie-i-box">
+                           <h3>AC Room</h3>
+                           <span><img src="/static/hotel-static/images/rooms/icon5.gif" alt=""></span>
+                       </div>
+                   </li>
+               
+               </ul>
+               </div>
+                  </div>
+               
+               
+           </div>
+           <!-- Room Facilities style-->
+           
+           <!-- Room Overview style-->
+           <div class="room-overview">
+           <h2>Room Overview</h2>
+           
+               <div class="table-responsive"> <table class="table table-striped"> <colgroup> <col class="col-xs-1"> <col class="col-xs-7"> </colgroup><tbody>
+                   <tr> <th scope="row"> <code>Occupancy:</code> </th> <td>{{ single.occupancy }}</td> </tr>
+                   <tr> <th scope="row"> <code>Size : </code> </th> <td>{{ single.size }}</td> </tr>
+                   <tr> <th scope="row"> <code>View :</code> </th> <td>{{ single.view }}</td> </tr> 
+                   <tr> <th scope="row"> <code>Room Service :</code> </th> <td>{{ single.room_service }}</td> </tr> 
+                   <tr> <th scope="row"> <code>Terraces :</code> </th> <td>{{ single.terraces }}</td> </tr>
+			{% if single.free_pickup_facility == 1 %}
+                   <tr> <th scope="row"> <code>Free Pickup Facility :</code> </th> <td>Yes</td> </tr>
+
+			{% else %}
+			<tr> <th scope="row"> <code>Free Pickup Facility :</code> </th> <td>No</td> </tr>
+
+			{% endif %}
+
+			{% if single.internet_free == 1 %}
+                   <tr> <th scope="row"> <code>Internet Free :</code> </th> <td>Yes</td> </tr>
+
+			{% else %}
+
+			<tr> <th scope="row"> <code>Internet Free :</code> </th> <td>No</td> </tr>
+
+			{% endif %}
+
+			{% if single.gym == 1 %}
+                   <tr> <th scope="row"> <code>Gym :</code> </th> <td>Yes</td> </tr>
+
+			{% else %}
+
+			<tr> <th scope="row"> <code>Gym :</code> </th> <td>No</td> </tr>
+
+			{% endif %}		   
+                   </tbody> </table> </div>
+               
+               
+               
+            
+           
+           </div>
+           
+           <!-- Room Overview style-->
+          
+          {{ arrival_date }}
+           
+           
+          </div>
+       </div>
+      
+      </div>
+	</section>
+  <section class="container clearfix common-pad-inner">
+	<h3>Ratings</h3>
+	{% ratings single %}<br>
+<div class="room-price">
+<h3>Comments</h3>
+	{% for r in review %}
+<p><span><b>Name : </b></span>{{ r.name }}--</p>
+
+<p><span><b>Comment : </b></span>{{ r.comment }}</p><br><br>
+
+{% endfor %}	
+</div>
+   </section>
+
+
+
+<div class="nasir-subscribe-form-row row">
+	
+</div>
+    
+ <!-- Welcome banner  style-->
+    
+{% endblock %}

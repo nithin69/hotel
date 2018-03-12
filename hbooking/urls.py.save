@@ -1,0 +1,18 @@
+__author__ = 'rt'
+
+from django.conf.urls import patterns, url, include
+from hbooking import views
+
+urlpatterns = patterns('',
+                url(r'^$', views.index, name='index'),
+                url(r'^about/$', views.about, name='about'),
+                url(r'^facilities/$', views.facilities, name='facilities'),
+                url(r'^gallery/$', views.gallery, name='gallery'),
+                url(r'^rooms/$', views.rooms, name='rooms'),
+                url(r'^tours/$', views.tours, name='tours'),
+                url(r'^contact/$', views.contact, name='contact'),
+                url(r'^bastar/$', views.bastar, name='bastar'), 
+		url(r'^bastar/$', views.bastar, name='bastar'),      
+                       
+                       		      
+)

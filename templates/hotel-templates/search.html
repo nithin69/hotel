@@ -1,0 +1,187 @@
+{% extends 'hotel-templates/base.html' %} 
+ {% load static %}
+
+  
+{% block title %}Naman Bastar - Rooms Availability{% endblock %}
+
+
+
+
+{% block content %}
+
+
+<style>
+custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+</style>
+
+{% if booking_search %}
+
+<h2> Available Rooms </h2>
+
+<section class="clearfix news-wrapper">
+    <div class="container clearfix common-pad-room">
+     <div class="row">
+     <div class="col-lg-12 col-md-12 col-xs-12">
+     
+        <!-- One-->
+       {% for n in booking_search %}
+
+       <div class="room-wrapper">
+         <div class="media">
+          <div class="media-left">
+             <a href="#"><img src="/media/{{n.image1}}" style="height:268px; width:345px;" alt=""></a>
+             </div> 
+          <div class="media-body">
+             <h2>{{ n.title }}</h2>
+             <p>{{ n.description }}.</p>
+             <h3>Room Facility</h3>
+		
+
+		
+  <!--            <h6>Beach View, Dinner Included, Fitness Area, Hotspot(WiFi), Safe Deposit Swimimng Pool, Pets Allows</h6>-->
+		Arrival Date:{{ arrival_date }}<br><br>
+		Departure Date: {{ departure_date }}<br><br>
+
+		Number of Rooms : {{no_of_rooms}}
+
+		<br>
+		<br>
+
+		
+		{% if no_of_rooms  <=  n.available_rooms %}
+
+
+
+		<p>Available Rooms: {{ n.available_rooms }}</p>
+
+		
+
+
+
+		{% else %}
+
+
+
+		<h3 style="color:red;">Sorry {{no_of_rooms}} rooms not Available, The Available Rooms are {{ n.available_rooms }}</h3>
+		<br><br>
+		<h2>Call us for Reservations @ 7587775500</h2>
+
+
+		{% endif %}
+             </div>   
+           <div class="media-right" style="background-color:white;">
+             <!--<p>Not Available<span>Per Night</span></p>-->
+			
+		{% if  '/naman-bastar/' in request.get_full_path %}
+              <!-- <a href="/room/{{n.slug}}/{{arrival_date}}-{{departure_date}}/">view room</a><br><br>-->
+
+		{% if n.available_rooms < 1 %}
+
+		
+		<a href="#" style="background-color:red;">Not available</a>
+
+		{% else %}
+
+		
+		{% if no_of_rooms <= n.available_rooms %}		
+
+
+		<a href="/naman-bastar/{{n.slug}}/booking/{{arrival_date}}/{{departure_date}}/{{no_of_rooms}}/">Book Now</a>
+
+		
+		{% else %}
+
+
+
+		{% endif %}
+
+		{% endif %}
+
+		{% else %}
+
+		<!--<a href="/room/{{n.slug}}/{{arrival_date}}-{{departure_date}}/">view room</a><br><br>-->
+
+		{% if n.available_rooms < 1 %}
+		
+		<a href="#" style="background-color:red;">Not available</a>
+
+		{% else %}
+
+		{% if no_of_rooms <= n.available_rooms %}		
+
+
+		<a href="/naman-heights/{{n.slug}}/booking/{{arrival_date}}/{{departure_date}}/{{no_of_rooms}}-{{adults}}/">Book Now</a>
+
+		
+		{% else %}
+
+
+
+		{% endif %}
+
+		{% endif %}
+		{% endif %}
+		<br><br><br>
+		
+		
+             </div>
+			  
+           </div>
+         </div>  
+         {% endfor %} 
+         
+       
+       </div>
+        </div>
+     
+     </div>
+    
+    
+    </section>     
+    
+   {% else %}
+
+                    
+
+    <h2> Rooms Not Available   </h2>
+
+<section class="clearfix news-wrapper">
+    <div class="container clearfix common-pad-room">
+     <div class="row">
+     <div class="col-lg-12 col-md-12 col-xs-12">
+     
+        <!-- One--> 
+     <h3>No rooms available from your search. Please try for other rooms</h3>
+         
+       
+       </div>
+        </div>
+     
+     </div>
+    
+    
+    </section> 
+
+
+
+            {% endif %}
+
+<br/>
+<br/>
+
+
+</div>
+{% endblock %}
+
+

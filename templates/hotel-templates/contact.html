@@ -1,0 +1,162 @@
+{% extends "hotel-templates/base.html" %}
+
+{% block title %} namanbastar  {% endblock %}
+
+{% block content %}
+ <!-- Header  Inner style-->
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header2.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Contact us</h2>
+ 	</div>
+ </section>
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/namanbastar/">Home</a></li>
+ 			<li class="active">Contact us</li>
+ 		</ol>
+ 	</div>
+ </section>
+<!-- Header  Slider style-->
+    
+
+<!-- Booking style-->
+  <section class="container clearfix common-pad booknow">
+    <div class="sec-header">
+         <h2>Send a message</h2>
+             <br>
+         </div> 
+        
+
+     <div class="row nasir-contact">
+      <div class="col-md-8">
+          
+
+
+
+         <div class="book-left-content input_form">
+
+	{% if done %}
+
+<p>Thank you for your enquiry. We will get back to you soon.</p>
+
+
+{% else %}
+
+
+          <form action="/contact/naman-bastar/" method="post">
+		{% csrf_token %}
+		{{contact_form.errors}}
+		         
+           <div class="row">   
+           <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12">
+               <span>Your Name</span>
+               <input type="text" class="form-control" id="name" name="name" placeholder="Your name"></div>   
+            <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12">
+                <span>Your Email</span>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"></div>
+            </div>  
+
+       <div class="row">   
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <span>Phone</span>
+                       <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                    </div>
+            </div>
+
+
+              
+            <div class="row">   
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <span>Subject</span>
+                       <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                    </div>
+            </div>
+ 	             
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <span>Message</span>
+                       <textarea class="form-control" rows="6" id="message" name="message" placeholder="Message"></textarea>
+                    </div>
+              </div>
+	
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><button type="submit" class="res-btn">Submit Now</button></div>
+              </div>
+          </form>
+	 {% endif %} 
+          </div>
+        
+        
+         </div>
+      <div class="col-md-4">
+         
+          <div class="contact-info">
+          
+          <h2>Contact Info</h2>
+          
+           <div class="media-contact clearfix">
+                            <div class="media-contact-icon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-contact-info">
+                              <p>Chitrakote Road, <br>Village Palli,JagdalPur <br> Chattisgarh,494001,India</p>
+                            </div>
+              </div>   
+            <div class="media-contact clearfix">
+                            <div class="media-contact-icon">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-contact-info">
+                              <p>
+                                        <a href="mailto: namanbastar@yahoo.co.in"> namanbastar@yahoo.co.in</a><br>
+                                        
+                                    </p>
+                            </div>
+              </div> 
+              
+             
+              
+              <div class="media-contact clearfix">
+                            <div class="media-contact-icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-contact-info">
+                              <p>
+                                  <a href="tel:91-07782-229740"><i>+91-07782-229740, 229750</i></a><br>
+                                  <a href="tel:+91-7587775500"><i>+91-7587775500,<br>+91-8319145131</i></a>
+                                    </p>
+                            </div>
+              </div> 
+              
+          </div>
+          
+          
+         
+         </div>  
+      
+      </div>
+    
+    </section> 
+    
+<!-- Booking style-->
+    
+
+   
+  <!-- TT-CONTACT-MAP -->
+            
+            <div class="addresses-block" style="margin-left: 85px;">
+                <iframe width="1200" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Naman%20Bastar%2C%20Jagdalpur%2C%20Chhattisgarh%2C%20India&amp;key=AIzaSyA7is0mzJc2ynJTPM4oD1yRoUxxkD9ogcQ" allowfullscreen=""></iframe>
+				</div>
+
+    
+  
+  
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+
+</div>
+    
+ <!-- Welcome banner  style-->
+    
+{% endblock %}

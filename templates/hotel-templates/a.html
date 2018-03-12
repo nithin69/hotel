@@ -1,0 +1,50 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
+<script>
+$(document).ready(function(){
+  
+    $("#startdate").datepicker({
+        todayBtn:  1,
+        autoclose: true,
+    }).on('changeDate', function (selected) {
+        var minDate = new Date(selected.date.valueOf());
+        $('#enddate').datepicker('setStartDate', minDate);
+    });
+    
+    $("#enddate").datepicker()
+        .on('changeDate', function (selected) {
+            var minDate = new Date(selected.date.valueOf());
+            $('#startdate').datepicker('setEndDate', minDate);
+        });
+
+});
+</script>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="form-group">
+            <label class="control-label">Start</label>
+            <input class="form-control" type="text" placehoder="Start Date" id="startdate"/>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="form-group">
+            <label class="control-label">End</label>
+            <input class="form-control" type="text" placehoder="End Date" id="enddate"/>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head onload="submitPayuForm()">
+  <script type="text/javascript">
+    var hash = "{{ hashh }}";
+    function submitPayuForm() {
+      if(hash =='') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+  </script>
+<script>
+  function show (toBlock){
+    setDisplay(toBlock, 'block');
+  }
+  function hide (toNone) {
+    setDisplay(toNone, 'none');
+  }
+  function setDisplay (target, str) {
+    document.getElementById(target).style.display = str;
+  }
+</script>
+<script>
+function myFunction() {
+    document.getElementById("myText").readOnly = true;
+}
+</script>
+<meta charset="UTF-8">
+<title>namanbastar</title>
+<!-- reponsive meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="/static/hotel-static/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/hotel-static/css/font-awesome.min.css" rel="stylesheet">
+<!-- strock gap icons -->
+<link rel="stylesheet" href="/static/hotel-static/vendors/Stroke-Gap-Icons-Webfont/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/hotel-static/css/animate.min.css">
+<!--    owl-carousel-->
+<link rel="stylesheet" href="/static/hotel-static/vendors/owlcarousel/owl.carousel.css">
+<link rel="stylesheet" href="/static/hotel-static/vendors/jquery-ui-1.11.4/jquery-ui.min.css">    
+
+<!-- Main Css  -->
+<link rel="stylesheet" href="/static/hotel-static/css/style.css">
+<link rel="stylesheet" href="/static/hotel-static/css/responsive.css">
+
+</head>
+<body>
+ <section class="top-bar dhomev">
+
+        <div class="container">
+
+            <div class="pull-left left-infos contact-infos">
+
+                <ul class="list-inline">
+
+                    <li>
+
+                        <a href="#"><i class="fa fa-phone"></i> 07782-231355</a>
+
+                    </li><!-- comment for inline hack
+
+                     --><li>
+
+                        <a href="#"><i class="fa fa-map-marker"></i> Aghanpur, Dharampura Road, JagdalPur 494001</a>
+
+                    </li><!-- comment for inline hack
+
+                     --><li>
+
+                        <p style="color:white;"><i class="fa fa-envelope"></i>  namanheights@gmail.com</p>
+
+                    </li>
+
+                </ul>
+
+            </div><!-- /.pull-left left-infos -->
+<!-- /.container -->
+
+    </section><!-- /.top-bar -->
+
+    
+
+    <nav class="navbar navbar-default  _fixed-header _light-header stricky" id="main-navigation-wrapper">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img alt="Naman Heights" src="/static/hotel-static/images/header/logo12.png" style="width:250px;height: 70px;margin-top: -10px;">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-nav ">
+		
+			                   <li><a href="/">Naman India</a></li>
+     			
+                   <li><a href="/home/naman-heights/">Home</a></li>
+		 					
+					
+					
+					<li><a href="/gallery/naman-heights/">Gallery</a></li>
+                    
+                    <li><a href="/heights/naman-heights/">About Bastar</a></li>	
+					
+                    <li><a href="/facilities/naman-heights/">Facilities</a></li>
+                  <!--  <li><a href="/tours/naman-heights/">Spiritual Tours</a></li>-->
+					<li><a href="/contact/naman-heights/">Contact us</a></li>
+		    
+		
+		    
+                </ul>
+
+            </div>
+        </div>
+
+    </nav> <!-- Header  Inner style-->
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header4.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Booking</h2>
+ 	</div>
+ </section>
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/">Home</a></li>
+ 			<li class="active">Booking</li>
+ 		</ol>
+ 	</div>
+ </section>
+<!-- Header  Slider style-->
+    
+
+<!-- Booking style-->
+  <section class="container clearfix common-pad-inner booknow">
+    <div class="sec-header">
+         <h2>Booking</h2>
+             <h3>Pick a room that best suits your taste and budget</h3>
+		
+         </div> 
+        
+     <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-left">
+         
+         <div class="book-left-content input_form">
+
+	
+
+          <form action={{ action }} method="post" name="payuForm" >
+{% csrf_token %}
+	   <input type="hidden" name="key" value="{{ MERCHANT_KEY }}" />
+      <input type="hidden" name="hash_string" value="{{ hash_string }}" />
+      <input type="hidden" name="hash" value="{{ hashh }}"/>
+      <!-- <input type="hidden" name="posted" value="{{ posted }}"/>-->
+      <input type="hidden" name="txnid" value="{{ txnid }}" />
+	
+           <div class="row">   
+           <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input type="text" class="form-control" id="firstname" value="{{ posted.firstname|default:'' }}" name="firstname" placeholder="Your name"></div>   
+            <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input type="email" class="form-control" id="email" value="{{ posted.email|default:'' }}" name="email" placeholder="Your Email"></div>
+            </div>  
+              
+<!--            <div class="row">   
+           <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input class="form-control datepicker-example8" placeholder="Arrival Date" name="arrival_date" type="text"></div>   
+            <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input type="text" class="form-control datepicker-example8" placeholder="Departure Date" name="departure_date"></div>
+            </div> 
+	
+	<div class="row">   
+           <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input class="form-control timepicker-example8" placeholder="Arrival Time" name="arrival_time" type="text"></div>   
+            <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12"><input type="text" class="form-control timepicker-example8" placeholder="Departure Time" name="departure_time"></div>
+            </div> 
+             
+              <div class="row">   
+           <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12">
+               
+               <div class="select-box">
+                            <select class="select-menu" name="adults">
+                                <option value="default">Adults</option>  
+                                <option value="1">1</option>	
+                                <option value="2">2</option>	
+                                <option value="3">3</option>	
+                                <option value="4">4</option>    
+                            </select>
+                    </div>
+                  
+                  </div>   
+            <div class="col-lg-6 col-md-6 col-sm-12 m0 col-xs-12">
+                <div class="select-box">
+                            <select class="select-menu" name="children">
+                                <option value="default">Children</option>  
+                                <option value="1">1</option>	
+                                <option value="2">2</option>	
+                                <option value="3">3</option>	
+                                <option value="4">4</option>    
+                            </select>
+                    </div>
+                </div>
+            </div> 
+            <div class="row">  
+	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="select-box">
+                            <select class="select-menu" name="room_type">
+                                <option value="default">Room Type</option>  
+                                <option value="Platinum Suite">Platinum Suite</option>	
+                                <option value="Diamond Room">Diamond Room</option>	
+                                <option value="Gold Room">Gold Room</option>	    
+                            </select>
+                    </div>
+                </div>           
+	    </div>-->
+	  	<div class="row">          
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input name="productinfo"  class="form-control" placeholder="Message" value="{{ posted.productinfo|default:'' }}"/>
+                   </div>
+             
+		
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input name="phone"  class="form-control" placeholder="Phone Number"  value="{{ posted.phone|default:'' }}" />
+                    </div>
+              
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input name="amount" type="hidden" id="myText" class="form-control" placeholder="Amount" value="{{ total_amount|default:'' }}" readonly />
+                    </div>
+	
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="udf1"  class="form-control" placeholder="City (Optional)" value="{{ posted.udf1 }}" />
+
+                    </div>
+	
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="udf2"   class="form-control" placeholder="Address (Optional)" value="{{ posted.udf2 }}" />
+
+                    </div>
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="udf3"   class="form-control" placeholder="State (Optional)" value="{{ posted.udf3 }}" />
+
+                    </div>
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="udf4"   class="form-control" placeholder="Country (Optional)" value="{{ posted.udf4 }}" />
+
+                    </div>
+
+		
+              
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input name="surl" type="hidden"  class="form-control" value="http://namanbastar.com/Success/" size="64" />
+                    </div>
+              
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input name="furl" type="hidden"  class="form-control" value="http://namanbastar.com/Failure/" size="64" />
+                    </div>
+              
+		
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                       <input type="hidden"  class="form-control" name="service_provider" value="payu_paisa" size="64" />
+                    </div>
+		<input type="hidden" name="arrival_date" value="{{ arrival_date }}" />
+		<input type="hidden" name="departure_date" value="{{ departure_date }}" />
+		<input type="hidden" name="room_type" value="{{ room.id }}" />
+		<input type="hidden" name="no_of_days" value="{{ no_of_days }}" />              
+		
+               </div>
+
+		<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)" required>  <a href="/static/hotel-static/pdf/policy.pdf" target="_blank">I Agree Terms and Conditions</a> and <a href="/static/hotel-static/pdf/Hotel  Cancellation Policy Naman  Heights.pdf" target="_blank">cancellation policy</a>
+		<p style="color:black;"><b><a id="clickMeId" onclick="show('comment'); hide('clickMeId')" alt="Has GSTIN?">HAS GSTIN?</a></b></p>
+
+<div id="comment" style="display:none;">
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="gstin_number"   class="form-control" placeholder="GSTIN Number" value="{{ posted.gstin_number }}" />
+
+                    </div>
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="registered_name"   class="form-control" placeholder="Registered Number " value="{{ posted.registered_name }}" />
+
+                    </div>
+
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                       <input name="udf5"  class="form-control" placeholder="Pincode (Optional)" value="{{ posted.udf5 }}" />
+
+                    </div>
+
+</div>
+	      <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><button type="submit" value="submit" class="res-btn">Submit Now</button></div>
+              </div>
+              
+              
+          </form>
+
+	
+          </div>
+         
+         
+         </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right">
+       
+          <div class="single-sidebar-widget sroom-sidebar">         
+              
+              <!-- Booking Form style-->
+              <div class="book-r-form">
+              
+                  <div class="room-price">
+                  
+              	<h3>Booking Details</h3>    
+                  </div>
+                  
+                  <div class="book-form">
+
+		  <div class="col-md-12"><p><b>Room Type : {{ room.title }}</b></p></div>
+                  <div class="col-md-12"><p><b>Arrival Date : {{ arrival_date }}</b></p></div>
+                  <div class="col-md-12"><b>Departure Date: {{ departure_date }}</b></div>
+                  <div class="col-md-12">
+                      <b>No of Rooms : 
+                 
+			{{ no_of_rooms }} </b>                     
+
+                      </div>
+			
+                     
+                  <div class="col-md-12"><b>Amount:
+                      
+			{{amount}}</b>
+                      </div>
+		<div class="col-md-12">
+		<b>{% if amount >= 2500 %}
+
+	GST @18% :{{gst}}
+
+
+	{% else %}
+
+	GST 12% : {{gst}}
+
+	
+	
+
+	{% endif %}<br>
+
+	<br>
+
+	Grand Total : Rs {{total_amount}}/-	</b>
+	</div>
+
+                  </div>
+                  
+                  </div>
+              
+              </div>
+     <!-- <div class="col-sm-4 pull-right">
+         <div class="book-right">
+         <span><img src="/static/hotel-static/images/booking/1.jpg" alt=""></span>
+         <h2>Booking details</h2>
+         <p>
+	Check in Date : {{ arrival_date }}<br><br>
+	Check out date :{{ departure_date }}<br><br>
+	
+	Amount : {{amount}}<br><br>
+
+	{% if amount > "2500" %}
+
+	GST @12% :{{gst}}
+
+
+	{% else %}
+
+	GST 18% = {{gst}}
+
+	
+	
+
+	{% endif %}<br>
+
+	<br>
+
+	Grand Total : Rs {{total_amount}}/-	</p>
+	
+         </div>-->
+         
+         </div>  
+      
+      </div>
+    
+    </section> 
+    
+<!-- Booking style-->
+    
+
+   
+  
+
+    
+  
+  
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+	
+</div>
+    
+ <!-- Welcome banner  style-->
+ 
+    
+    
+<footer>
+<section class="clearfix footer-wrapper">
+<section class="container clearfix footer-pad">   
+
+<div class="widget about-us-widget col-md-4 col-sm-6">
+<!--  <a href="index.html"><img src="/static/hotel-static/images/footer/logo.png" alt="" class="img-responsive"></a> -->
+
+  <p>Pure Business Apartment Hotel. </p>
+            <a href="/about/naman-heights/">Read More <i class="fa fa-angle-double-right"></i></a>
+            <ul class="nav">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>  
+                </ul>
+
+</div>
+
+
+<div class="widget widget-links col-md-2 col-sm-6">
+<h4 class="widget_title">Explore</h4>
+  <div class="widget-contact-list"> 
+  <ul>
+                        
+                        <li><a href="/gallery/naman-heights/">Gallery</a></li>
+                        <li><a href="/tours/naman-heights/">Tour</a></li>
+                      
+						<li><a href="/facilities/naman-heights/">Facilities</a></li>
+                </ul>  
+    </div>
+</div>
+ <div class="widget widget-links col-md-2 col-sm-6">
+ <h4 class="widget_title">Quick Links</h4>
+
+
+     <div class="widget-contact-list"> 
+  <ul>
+                       <li><a href="/home/naman-heights/">Home</a></li>
+                       <li><a href="/about/naman-heights/">About Us</a></li>
+                        
+                        <li><a href="/contact/naman-heights/">Contact Us</a></li>
+                       
+
+                </ul>  
+    </div>
+</div>
+ <div class="widget get-in-touch col-md-4 col-sm-6">
+ <h4 class="widget_title">Get In Touch</h4>
+     <div class="widget-contact-list">
+     <ul>
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        <div class="fleft location_address">
+                            <b>Naman Heights</b><br>Aghanpur, Dharampura Road, JagdalPur 494001 Chattisgarh,
+                        </div>
+
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <div class="fleft contact_no">
+                            <a href="tel:+91-07782-231355">+91-07782-231355</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="fleft contact_mail">
+                            <a href="mailto: namanbastar@yahoo.co.in"> namanheights@gmail.com</a>
+                        </div>
+                    </li>
+
+                </ul>
+     </div>
+</div>
+</section>
+</section> 
+<section class="container clearfix footer-b-pad">
+<div class="footer-copy"><div class="pull-left fo-txt">
+           <p>Copyright © Naman Bastar 2017. All rights reserved. </p>
+       </div>
+<div class="pull-right fo-txt">
+           <p>Created by: <a href="http://delevere.com/">Delevere</a></p>
+       </div>
+
+</div>
+</section> 
+</footer> 
+<!-- footer  style--> 
+    
+<script src="/static/hotel-static/js/jquery-2.2.4.min.js"></script>
+<script src="/static/hotel-static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/hotel-static/js/jquery.bxslider.js"></script>
+<!-- owl carousel  -->   
+<script src="/static/hotel-static/vendors/owlcarousel/owl.carousel.min.js"></script>
+<script src="/static/hotel-static/js/jquery.easing.min.js"></script>
+<script src="/static/hotel-static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/static/hotel-static/js/zebra_datepicker.js"></script>
+<!-- jQuery appear -->
+<script src="/static/hotel-static/vendors/jquery-appear/jquery.appear.js"></script>    
+<!-- jQuery countTo -->
+<script src="/static/hotel-static/vendors/jquery-countTo/jquery.countTo.js"></script>
+<script src="/static/hotel-static/js/jquery.form.js"></script>
+<script src="/static/hotel-static/js/jquery.validate.min.js"></script>
+<script src="/static/hotel-static/js/contact.js"></script>
+<script src="/static/hotel-static/js/jquery.mixitup.min.js"></script>
+<script src="/static/hotel-static/js/jquery.fancybox.pack.js"></script>    
+ <script src="/static/hotel-static/vendors/jquery-ui-1.11.4/jquery-ui.min.js"></script>   
+<script src="/static/hotel-static/js/custom.js"></script>
+</body> 
+
+</html>

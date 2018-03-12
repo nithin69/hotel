@@ -1,0 +1,225 @@
+{% extends "hotel-templates/base.html" %}
+
+{% block title %} namanbastar  {% endblock %}
+
+{% block content %}
+ 
+ <!-- Header  Inner style-->
+{% if  '/naman-bastar/' in request.get_full_path %}
+
+ <section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header2.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">About us</h2>
+ 	</div>
+ </section>
+
+
+
+
+
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/home/naman-bastar/">Home</a></li>
+ 			<li class="active">About us</li>
+ 		</ol>
+ 	</div>
+ </section>
+
+{% else %}
+
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header4.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">About us</h2>
+ 	</div>
+ </section>
+
+
+ <section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/home/naman-heights/">Home</a></li>
+ 			<li class="active">About us</li>
+ 		</ol>
+ 	</div>
+ </section>
+
+
+{% endif %}
+
+<!-- Header  Slider style-->
+    
+
+<!-- About Resort style-->
+  <section class="container clearfix common-pad about-info-box">
+    {% for n in about %}
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+      
+      <div class="sec-header3">
+         <h2>{{ n.title }}</h2>
+         <br>
+         </div>
+      <p>{{ n.description_para1 }}.</p>
+        <h6>{{ n.description_para2|linebreaksbr }}.</h6>
+
+
+      </div>
+      
+      <div class="col-sm-4 hidden-xs">
+      
+      <div class="img-cap-effect">
+          <div class="img-box">
+          <img src="media/{{ n.image }}" alt="">
+          
+          </div>
+          
+          </div>
+      </div>
+    </div>
+	{% endfor %}
+    </section> 
+    
+<!-- About Resort style-->
+    
+
+  
+  
+<!-- Take a Tour video  -->
+    <section class="take-a-tour-video-box">
+ <div class="check-video-box">
+     
+    <div class="img-holder">
+						<img src="/static/hotel-static/images/about/video-overlay.jpg" alt="">
+						<div class="content">
+                            <div class="content-inner">
+                            <div class="box">
+                            <h3>Take a Tour</h3>                            
+                            <a class="fancybox" href="/static/hotel-static/images/about/video1.jpg">
+									<i class="icon icon-Play"></i>
+								</a>                                
+                                
+                            <h4>0f our wounderfull resort</h4>
+                               </div>
+                                </div>
+						</div>
+					</div>
+  </div>
+        
+ </section>
+<!-- Take a Tour video  -->   
+    
+ <!-- Testimonials Resort  -->
+  <!-- <section class="container clearfix common-pad testimonials-sec">
+   <div class="sec-header">
+         <h2>Testimonials</h2>
+             <h3>Pick a room that best suits your taste and budget</h3>
+         </div> 
+      
+      <div class="testimonials-wrapper">
+      <div class="testimonial-sliders">
+    
+         
+          <div class="item">
+          <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>             
+             <div class="test-bot">
+             <div class="tst-img"><img src="/static/hotel-static/images/testimonials/1.png" alt="" class="img-responsive"></div>
+             <div class="client_name">
+               <h5>Mark John - <span>Nescom Technology- Director</span></h5>  
+                 <ul>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+									</ul>
+                 </div>
+             
+             </div>
+          </div> 
+          
+           <div class="item">         
+             <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>             
+             <div class="test-bot">
+             <div class="tst-img"><img src="/static/hotel-static/images/testimonials/2.png" alt="" class="img-responsive"></div>
+             <div class="client_name">
+               <h5>Mark John - <span>Nescom Technology- Director</span></h5>  
+                 <ul>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+									</ul>
+                 </div>             
+             </div>        
+         </div> 
+          <div class="item">
+          <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>             
+             <div class="test-bot">
+             <div class="tst-img"><img src="/static/hotel-static/images/testimonials/3.png" alt="" class="img-responsive"></div>
+             <div class="client_name">
+               <h5>Mark John - <span>Nescom Technology- Director</span></h5>  
+                 <ul>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+									</ul>
+                 </div>
+             
+             </div>
+          </div> 
+          
+           <div class="item">         
+             <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>             
+             <div class="test-bot">
+             <div class="tst-img"><img src="/static/hotel-static/images/testimonials/4.png" alt="" class="img-responsive"></div>
+             <div class="client_name">
+               <h5>Mark John - <span>Nescom Technology- Director</span></h5>  
+                 <ul>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+									</ul>
+                 </div>             
+             </div>        
+         </div> 
+          <div class="item">         
+             <div class="test-cont"><p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p></div>             
+             <div class="test-bot">
+             <div class="tst-img"><img src="/static/hotel-static/images/testimonials/5.png" alt="" class="img-responsive"></div>
+             <div class="client_name">
+               <h5>Mark John - <span>Nescom Technology- Director</span></h5>  
+                 <ul>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+										<li><a href="#"><i class="fa fa-star"></i></a></li>
+									</ul>
+                 </div>             
+             </div>        
+         </div> 
+          
+          
+    
+    </div>
+          
+      </div>
+ </section>  -->
+ <!-- Testimonials  Resort -->
+    
+  
+  
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+	
+</div>
+    
+ <!-- Welcome banner  style-->
+    
+{% endblock %}

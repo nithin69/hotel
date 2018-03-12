@@ -1,0 +1,41 @@
+
+<!--<div class="room-overview">
+<h4><a href="{% url "review_create" content_type='room' object_id=single.id %}">Review this Room</a></h4>
+{% get_reviews single as reviews %}
+{% for review in reviews %}
+    <h4>
+        {% if review.content %}
+            {{ review.content|truncatewords:'70' }}
+        {% else %}
+            Reviewed without description.
+        {% endif %}
+   </h4>
+    </div>
+    <a href="{% url "review_detail" pk=review.id %}">Review details</a>
+{% endfor %}
+</div>
+
+
+
+<h4>{% render_category_averages single 100 %}</h4>-->
+
+
+
+for i in a:
+...     delta = i.to_date -  i.from_date
+...     for j in range(delta.days + 1):
+...         print(i.from_date + timedelta(days=j)), i.rate,
+
+
+
+trigger
+
+CREATE DEFINER=`root`@`%` TRIGGER `naman`.`hbooking_bulk_rate_AFTER_INSERT` AFTER INSERT ON `hbooking_bulk_rate` FOR EACH ROW
+BEGIN
+
+insert into `naman`.`hbooking_rate` (rate, date)  SELECT NEW.rate, @d:=(@d + interval 1 day) 
+FROM (SELECT @d:=date(NEW.from_date)) r
+CROSS JOIN information_schema.tables t 
+WHERE @d < NEW.to_date;
+
+END

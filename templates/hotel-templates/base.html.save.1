@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>namanbastar</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- strock gap icons -->
+<link rel="stylesheet" href="/static/hotel-static/css/animate.min.css">
+<!--    owl-carousel-->
+<link rel="stylesheet" href="/static/hotel-static/vendors/owlcarousel/owl.carousel.css">   
+<link rel="stylesheet" href="/static/star-ratings/css/star-ratings.css">
+<script type="text/javascript" src="/static/star-ratings/js/dist/star-ratings.min.js"></script>
+<!-- Main Css  -->
+<link rel="stylesheet" href="/static/hotel-static/css/style.css">
+<link rel="stylesheet" href="/static/hotel-static/css/responsive.css"> 	 
+<link rel="shortcut icon" href="/static/hotel-static/images/favicon.ico" title="favicon" >
+
+
+</head>
+<body>
+{% if  '/naman-bastar/' in request.get_full_path %}
+ <section class="top-bar dhomev">
+        <div class="container">
+            <div class="pull-left left-infos contact-infos">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#"><i class="fa fa-phone"></i> 07782-229740</a>
+                    </li><!-- comment for inline hack
+                     --><li>
+                        <a href="#"><i class="fa fa-map-marker"></i> Chitrakote Road, Village Palli, JagdalPur Chattisgarh</a>
+                    </li><!-- comment for inline hack
+                     --><li>
+                        <p style="color:white;"><i class="fa fa-envelope"></i> namanbastar@yahoo.co.in</p>
+                    </li>
+                </ul>
+            </div><!-- /.pull-left left-infos -->
+            
+    </section>
+
+{% else %}
+
+<section class="top-bar dhomev">
+        <div class="container">
+            <div class="pull-left left-infos contact-infos">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#"><i class="fa fa-phone"></i> 07782-291355</a>
+                    </li><!-- comment for inline hack
+                     --><li>
+                        <a href="#"><i class="fa fa-map-marker"></i> Aghanpur, Dharampura Road, JagdalPur 494001</a>
+                    </li><!-- comment for inline hack
+                     --><li>
+                        <p style="color:white;"><i class="fa fa-envelope"></i> namanheights@gmail.com</p>
+                    </li>
+                </ul>
+            </div><!-- /.pull-left left-infos -->
+            
+    </section>
+
+{% endif %}
+
+<!-- /.top-bar -->
+    {% if  '/naman-bastar/' in request.get_full_path %}
+    <nav class="navbar navbar-default  _fixed-header _light-header stricky" id="main-navigation-wrapper">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img alt="Awesome Image" src="/static/hotel-static/images/header/logo11.png" style="width:250px;height: 70px;margin-top: -10px;">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-nav ">
+		
+			                   <li><a href="/">Naman India</a></li>
+     			
+                   <li><a href="/home/naman-bastar/">Home</a></li>
+		 					
+					<li><a href="/about/naman-bastar/">About Us</a></li>
+					
+					<li><a href="/gallery/naman-bastar/">Gallery</a></li>
+                    
+                    <li><a href="/bastar/naman-bastar/">About Bastar</a></li>	
+					
+                    <li><a href="/facilities/naman-bastar/">Facilities</a></li>
+                    <li><a href="/tours/naman-bastar/">Spiritual Tours</a></li>
+					<li><a href="/contact/naman-bastar/">Contact us</a></li>
+		
+		
+		    
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+{% else %}
+
+<nav class="navbar navbar-default  _fixed-header _light-header stricky" id="main-navigation-wrapper">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img alt="Naman Heights" src="/static/hotel-static/images/header/logo12.png" style="width:250px;height: 70px;margin-top: -10px;">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-nav ">
+		
+			                   <li><a href="/">Naman India</a></li>
+     			
+                   <li><a href="/home/naman-heights/">Home</a></li>
+		 					
+				<!--	<li><a href="/about/naman-heights/">About Us</a></li>-->
+					
+					<li><a href="/gallery/naman-heights/">Gallery</a></li>
+                    
+                    <li><a href="/heights/naman-heights/">About Bastar</a></li>	
+					
+                    <li><a href="/facilities/naman-heights/">Facilities</a></li>
+                  
+					<li><a href="/contact/naman-heights/">Contact us</a></li>
+		    
+		
+		    
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+
+{% endif %}
+
+{% block content %}
+
+{% endblock %}
+		
+		
+		
+		
+		
+<!-- footer  style-->
+
+<footer>
+{% if  '/naman-bastar/' in request.get_full_path %}
+
+<section class="clearfix footer-wrapper">
+<section class="container clearfix footer-pad">   
+
+<div class="widget about-us-widget col-md-4 col-sm-6">
+<!--  <a href="index.html"><img src="/static/hotel-static/images/footer/logo.png" alt="" class="img-responsive"></a> -->
+
+  <p>Nestled in the laps of nature, resort Naman Bastar is an ideal venue to escape from the chaos of city life. </p>
+            <a href="/about/naman-bastar">Read More <i class="fa fa-angle-double-right"></i></a>
+            <ul class="nav">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>  
+                </ul>
+
+</div>
+
+
+<div class="widget widget-links col-md-2 col-sm-6">
+<h4 class="widget_title">Explore</h4>
+  <div class="widget-contact-list"> 
+  <ul>
+                        
+                        <li><a href="/gallery/naman-bastar/">Gallery</a></li>
+                        <li><a href="/tours/naman-bastar/">Tour</a></li>
+                       <li><a href="/">Naman India</a></li>
+						<li><a href="/facilities/naman-bastar/">Facilities</a></li>
+                </ul>  
+    </div>
+</div>
+ <div class="widget widget-links col-md-2 col-sm-6">
+ <h4 class="widget_title">Quick Links</h4>
+
+
+     <div class="widget-contact-list"> 
+  <ul>
+                       <li><a href="/home/naman-bastar/">Home</a></li>
+                       <li><a href="/about/naman-bastar/">About Us</a></li>
+                        
+                        <li><a href="/contact/naman-bastar/">Contact Us</a></li>
+                       
+
+                </ul>  
+    </div>
+</div>
+ <div class="widget get-in-touch col-md-4 col-sm-6">
+ <h4 class="widget_title">Get In Touch</h4>
+     <div class="widget-contact-list">
+     <ul>
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        <div class="fleft location_address">
+                            <b>Naman Bastar</b><br>Chitrakote Road, Village Palli,JagdalPur Chattisgarh, pincode: 494001
+                        </div>
+
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <div class="fleft contact_no">
+                            <a href="tel:+91-07782-229740">+91-7782-229740, 229750</a>    <a href="tel:+91-7587775500">+91-7587775500, +91-8319145131</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="fleft contact_mail">
+                            <h5>namanbastar@yahoo.co.in</h5>
+                        </div>
+                    </li>
+
+                </ul>
+     </div>
+</div>
+</section>
+</section> 
+
+{% else %}
+
+<section class="clearfix footer-wrapper">
+<section class="container clearfix footer-pad">   
+
+<div class="widget about-us-widget col-md-4 col-sm-6">
+<!--  <a href="index.html"><img src="/static/hotel-static/images/footer/logo.png" alt="" class="img-responsive"></a> -->
+
+  <p>Pure Business Apartment Hotel. </p>
+            <a href="/about/naman-heights/">Read More <i class="fa fa-angle-double-right"></i></a>
+            <ul class="nav">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>  
+                </ul>
+
+</div>
+
+
+<div class="widget widget-links col-md-2 col-sm-6">
+<h4 class="widget_title">Explore</h4>
+  <div class="widget-contact-list"> 
+  <ul>
+                        
+                        <li><a href="/gallery/naman-heights/">Gallery</a></li>
+                        <li><a href="/tours/naman-heights/">Tour</a></li>
+                       <li><a href="/">Naman India</a></li>
+						<li><a href="/facilities/naman-heights/">Facilities</a></li>
+                </ul>  
+    </div>
+</div>
+ <div class="widget widget-links col-md-2 col-sm-6">
+ <h4 class="widget_title">Quick Links</h4>
+
+
+     <div class="widget-contact-list"> 
+  <ul>
+                       <li><a href="/home/naman-heights/">Home</a></li>
+                       <li><a href="/about/naman-heights/">About Us</a></li>
+                        
+                        <li><a href="/contact/naman-heights/">Contact Us</a></li>
+                       
+
+                </ul>  
+    </div>
+</div>
+ <div class="widget get-in-touch col-md-4 col-sm-6">
+ <h4 class="widget_title">Get In Touch</h4>
+     <div class="widget-contact-list">
+     <ul>
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        <div class="fleft location_address">
+                            <b>Naman Heights</b><br>Aghanpur, Dharampura Road, JagdalPur, Chattisgarh, pincode: 494001,
+                        </div>
+
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <div class="fleft contact_no">
+                            <a href="tel:+91-07782-229740">+91-7782-291355</a>  /  <a href="tel:+91-9340937833">+91-9340937833</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="fleft contact_mail">
+                            <h5>namanheights@gmail.com</h5>
+                        </div>
+                    </li>
+
+                </ul>
+     </div>
+</div>
+</section>
+</section>
+{% endif %}
+
+<section class="container clearfix footer-b-pad">
+<div class="footer-copy"><div class="pull-left fo-txt">
+           <p>Copyright © Naman India 2017. All rights reserved. </p>
+       </div>
+<div class="pull-right fo-txt">
+           <p>Created by: <a href="http://delevere.com/">Delevere</a></p>
+       </div>
+
+</div>
+</section> 
+</footer> 
+<!-- footer  style--> 
+<script type="text/javascript" src="/static/hotel-static/js/jquery.bxslider.js"></script>
+<!-- owl carousel  -->   
+<script src="/static/hotel-static/vendors/owlcarousel/owl.carousel.min.js"></script>
+<script src="/static/hotel-static/js/jquery.easing.min.js"></script>
+<script src="/static/hotel-static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/static/hotel-static/js/zebra_datepicker.js"></script>
+<!-- jQuery appear -->
+<script src="/static/hotel-static/vendors/jquery-appear/jquery.appear.js"></script>    
+<!-- jQuery countTo -->
+<script src="/static/hotel-static/vendors/jquery-countTo/jquery.countTo.js"></script>
+<script src="/static/hotel-static/js/jquery.form.js"></script>
+<script src="/static/hotel-static/js/jquery.validate.min.js"></script>
+<script src="/static/hotel-static/js/contact.js"></script>
+<script src="/static/hotel-static/js/jquery.mixitup.min.js"></script>
+<script src="/static/hotel-static/js/jquery.fancybox.pack.js"></script>    
+<script src="/static/hotel-static/js/custom.js"></script>    
+ 
+<script>
+ $(document).ready(function(){
+  
+    $("#arrival_date").datepicker({
+        todayBtn:  1,
+        autoclose: true,
+        format: "dd-mm-yyyy"
+    }).on('changeDate', function (selected) {
+        var minDate = new Date(selected.date.valueOf());
+        $('#departure_date').datepicker('setStartDate', minDate);
+    });
+    
+    $("#departure_date").datepicker({format: "dd-mm-yyyy"})
+	   
+        .on('changeDate', function (selected) {
+            var minDate = new Date(selected.date.valueOf());
+            $('#arrival_date').datepicker('setEndDate', minDate);
+        });
+
+});
+</script>
+</body> 
+
+</html>

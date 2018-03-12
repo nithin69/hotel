@@ -1,0 +1,101 @@
+{% extends "hotel-templates/base.html" %}
+
+{% block title %} namanbastar  {% endblock %}
+
+{% block content %}
+ <!-- Header  Inner style-->
+
+{% if  '/naman-bastar/' in request.get_full_path %}
+
+ <section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header2.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Facilities</h2>
+ 	</div>
+ </section>
+
+<section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/home/naman-bastar/">Home</a></li>
+ 			<li class="active">Facilities</li>
+ 		</ol>
+ 	</div>
+ </section>
+{% else %}
+
+<section class="row final-inner-header" style="background:url(http://www.namanbastar.com/static/hotel-static/images/inner-header4.jpg) no-repeat scroll center bottom">
+ 	<div class="container">
+ 		<h2 class="this-title">Facilities</h2>
+ 	</div>
+ </section>
+
+<section class="row final-breadcrumb">
+ 	<div class="container">
+ 		<ol class="breadcrumb">
+ 			<li><a href="/home/naman-heights/">Home</a></li>
+ 			<li class="active">Facilities</li>
+ 		</ol>
+ 	</div>
+ </section>
+{% endif %}
+
+ 
+<!-- Header  Slider style-->
+    
+
+<!-- About Resort style-->
+<section class="container clearfix common-pad-inner about-info-box nasir-room-grid-header">
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<div class="sec-header3">
+				<h2>Facilities</h2>
+				<h3>Pick a room that best suits your taste and budget</h3>
+			</div>
+		</div>
+	</div>
+</section>     
+<!-- About Resort style-->
+ 
+ 
+<section class="row nasir-room-grid">
+	<div class="container">
+		
+		<div class="row">
+			{% for f in facility %}
+			<div class="col-sm-4 nroom-grid">
+				<a href="#" class="room-img"><img src="media/{{ f.image }}" alt=""></a>
+				<div class="row this-conts">
+					<div class="media">
+						<div class="media-body this-title">{{ f.title }}</div>
+						
+					</div>
+					<p>{{ f.description }}</p>
+					
+				</div>
+				
+			</div>
+
+		
+			{% endfor %}
+			
+			
+		</div>
+	
+
+	</div>
+</section>
+  
+
+    
+  
+  
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+	
+</div>
+    
+ 
+
+{% endblock %}
+

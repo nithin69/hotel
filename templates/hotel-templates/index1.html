@@ -1,0 +1,366 @@
+{% extends "hotel-templates/base.html" %}
+
+{% block title %} namanbastar  {% endblock %}
+
+{% block content %}
+
+
+    
+<!-- Header  Slider style-->
+
+
+<!--<section class="home-slider2">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">  
+<div class="carousel-inner" role="listbox">
+<div class="item active">
+<img src="/static/hotel-static/images/banner2/1.jpg" alt="Lake Resort">
+  
+<div class="carousel-caption">
+    <h2>Spend Your Dream Holidays</h2>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut<br>fugit, sed quia consequuntur magni dolores eos quit.</p>
+    <a href="#">Know more</a>
+    </div>
+</div>
+<div class="item">
+<img src="/static/hotel-static/images/banner2/1.jpg" alt="Lake Resort">
+<div class="carousel-caption"><h2>Spend Your Dream Holidays</h2>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut<br>fugit, sed quia consequuntur magni dolores eos quit.</p>
+    <a href="#">Know more</a></div>
+</div>
+</div>
+</div>
+</section>-->
+
+<div id="minimal-bootstrap-carousel" class="carousel default-home-slider slide carousel-fade shop-slider" data-ride="carousel">           
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active slide-1" style="background-image: url(/static/hotel-static/images/slider/10.jpg);backgroudn-position: center right;">
+            
+            <div class="carousel-caption nhs-caption nhs-caption6">
+	      		<div class="thm-container">
+	      			<div class="box valign-middle">
+	      				<div class="content text-center">
+							<h2 data-animation="animated fadeInUp" class="this-title">Naman Heights</h2>
+							<p data-animation="animated fadeInUp">stay with care</p>
+							<a data-animation="animated fadeInLeft" href="/booking/" class="nhs-btn3">Book now</a>
+							<a data-animation="animated fadeInRight" href="/about/" class="nhs-btn">know more</a>
+	      				</div>
+	      			</div>
+	      		</div>
+	    	</div>                
+        </div>
+        <div class="item  slide-2" style="background-image: url(/static/hotel-static/images/slider/11.jpg);backgroudn-position: center right;">
+            
+            <div class="carousel-caption nhs-caption nhs-caption7">
+	      		<div class="thm-container">
+	      			<div class="box valign-middle">
+	      				<div class="content text-center">
+							<h2 data-animation="animated fadeInUp" class="this-title">Naman Bastar</h2>
+							<p data-animation="animated fadeInDown">stay tuned with nature...</p>
+							<a data-animation="animated fadeInLeft" href="/booking/" class="nhs-btn3">Book now</a>
+							<a data-animation="animated fadeInRight" href="/about/" class="nhs-btn">know more</a>
+	      				</div>
+	      			</div>
+	      		</div>
+	    	</div>                
+        </div>
+       <!--  <div class="item  slide-2" style="background-image: url(/static/hotel-static/images/slider/12.jpg);backgroudn-position: center right;">
+            
+            <div class="carousel-caption nhs-caption nhs-caption8">
+	      		<div class="thm-container">
+	      			<div class="box valign-middle">
+	      				<div class="content text-center">
+							<h2 data-animation="animated fadeInUp" class="this-title">We offer you the best</h2>
+							<h2 data-animation="animated fadeInUp" class="this-title">luxury hotel with an impressive history</h2>
+	      				</div>
+	      			</div>
+	      		</div>
+	    	</div>            
+        </div> -->
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!-- Header  Slider style-->        
+
+<!-- Search style-->
+<form novalidate=""  method="get" action="/search/" class="reply-form">
+
+<div class="search-wrapper">
+<section class="container clearfix">
+<div class="search-sec search-sec-homet">
+<div class="overlay">
+    <div class="border">
+    <div class="ser-in-box"><input class="form-control datepicker-example8"  placeholder="Arrival Date" type="text" name="arrival_date"></div>
+    <div class="ser-in-box"><input type="text" class="form-control datepicker-example8" placeholder="Departure Date" name="departure_date"></div>
+    <div class="ser-in-box">   
+    <div class="select-box">
+                            <select class="select-menu">
+                                <option value="default">No of rooms</option>  
+                                <option value="1">1</option>	
+                                <option value="2">2</option>	
+                                <option value="3">3</option>	
+                                <option value="4">4</option>    
+                             <option value="5">5</option> 
+							</select>
+                    </div>
+    </div>
+<div class="ser-in-box">
+     <div class="select-box">
+                            <select class="select-menu" name="room">
+                                
+                                <option value="default">Select Rooms</option>
+				{% for i in height %}
+                                <option value="{{i.id}}">{{ i.title }}</option>
+				{% endfor %}                                
+                                
+                            </select>
+                    </div></div>
+
+					
+<div class="ser-in-box chk-button"><button type="submit" class="res-btn">Check Availability</button></div> 
+ </div>
+</div>
+</div>
+</section>
+</div>
+</form>
+
+<br>
+<section class="row nasir-room-grid">
+
+	<div class="container">
+		<div class="row">
+			{% for r in height %}
+			<div class="col-sm-4 nroom-grid"  style="width:400px; height:620px;">
+				<a href="room/{{ r.slug }}" class="room-img"><img src="media/{{r.image1}}" alt=""></a>
+				<div class="row this-conts">
+					<div class="media">
+						<div class="media-body this-title" style="
+    text-align: center;">{{ r.title }}</div>
+						
+					</div>
+					 <p>{{ r.description }}</p>
+         <a href="room/{{ r.slug }}" class="read-more">view room<i class="fa fa-arrow-right"></i></a>
+				</div>
+			</div>
+
+			{% endfor %}
+			<!--<div class="col-sm-4 nroom-grid">
+				<a href="/diamondroom/" class="room-img"><img src="/static/hotel-static/images/rooms/diamond.jpg" alt=""></a>
+				<div class="row this-conts">
+					<div class="media">
+						<div class="media-body this-title">Diamond Room</div>
+						<div class="media-right">
+							Rs 5,100<small>Per Night</small>
+						</div>
+					</div>
+					<p>Very good facilities & ambience. Staff is very well trained. Every necessary facility is available within the hotel. Near to railway station.</p>
+         <a href="/diamondroom/" class="read-more">view room<i class="fa fa-arrow-right"></i></a>
+				</div>
+			</div>
+			<div class="col-sm-4 nroom-grid">
+				<a href="/goldroom/" class="room-img"><img src="/static/hotel-static/images/rooms/gold.jpg" alt=""></a>
+				<div class="row this-conts">
+					<div class="media">
+						<div class="media-body this-title">Gold Room</div>
+						<div class="media-right">
+							Rs 4,500<small>Per Night</small>
+						</div>
+					</div>
+					<p>Hotel gold offers a reasonable accommodation,Room size sufficient for double occupancy. Its good because on highway Food is good.</p>
+         <a href="/goldroom/" class="read-more">view room<i class="fa fa-arrow-right"></i></a>
+				</div>
+			</div>-->
+		
+			
+		</div>
+	</div>
+</section>
+
+
+ 
+ 
+  <div class="resot-activities clearfix">y
+    
+    <div class="container clearfix common-pad">
+      <div class="row">
+        
+        <div class="col-lg-6 col-md-6 activities-cont">
+          
+          <div class="sec-header3">
+             <h2>Activities of Resort</h2>
+                 <h3>Pick a room that best suits your taste and budget</h3>
+             </div>
+          <p>Nested in the laps of nature, resort Naman Bastar is an ideal venue to escape from the chaos of city life. A perfect destination in a calm and serene zero polluted area, away from the hustle bustle of town at the outskirts of the city We at Naman Bastar totally understand your requirements and are happy to serve you.
+		  </p>
+		  
+            <a href="/about/" class="res-btn">About us<i class="fa fa-arrow-right"></i></a>
+            
+          </div>
+          <div class="col-lg-6 col-md-6 col-xs-12">
+			<div class="row nasir-welboxes">
+		  	
+			  	<div class="single_wel_cont col-sm-6">  
+					<a class="wel-box" href="#">
+						<div class="icon-box"><img src="/static/hotel-static/images/welcome/icon-2.png" alt="" /></div>
+						<h4>Health Club</h4>
+						<div class="overlay transition3s">
+							<div class="icon_position_table">
+								<div class="icon_container border_round">
+									<h2>Health Club</h2>
+									
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="single_wel_cont col-sm-6">  
+					<a class="wel-box" href="#">
+						<div class="icon-box"><img src="/static/hotel-static/images/welcome/icon-1.png" alt="" /></div>
+						<h4>Restaurant</h4>
+						<div class="overlay transition3s">
+							<div class="icon_position_table">
+								<div class="icon_container border_round">
+									<h2>Restaurant</h2>
+									
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<div class="single_wel_cont col-sm-6">  
+					<a class="wel-box" href="#">
+						<div class="icon-box"><img src="/static/hotel-static/images/welcome/icon-1.png" alt="" /></div>
+						<h4>Outdoor Dining</h4>
+						<div class="overlay transition3s">
+							<div class="icon_position_table">
+								<div class="icon_container border_round">
+									<h2>Outdoor Dining</h2>
+									
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<div class="single_wel_cont col-sm-6">  
+					<a class="wel-box" href="#">
+						<div class="icon-box"><img src="/static/hotel-static/images/welcome/icon-3.png" alt="" /></div>
+						<h4>Delicious Food</h4>
+						<div class="overlay transition3s">
+							<div class="icon_position_table">
+								<div class="icon_container border_round">
+									<h2>Delicious Food</h2>
+									
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+         
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    
+<!-- Our Gallery style-->
+ <section class="our-galler-htwo clearfix common-pad">
+    
+    <div class="container clearfix">
+      
+         <div class="sec-header sec-w-header">
+            <h2>Our Gallery</h2>
+         	<h3>Pick a room that best suits your taste and budget</h3>
+         </div>
+     </div>
+     
+     <div class="fullwidth-silder">
+        
+        <div class="fullwidth-slider">
+			<div class="item">
+				<img src="/static/hotel-static/images/gallery-two/11.jpg" alt="">
+				<div class="this-overlay">
+					<div class="this-texts">
+						<a href="/static/hotel-static/images/gallery-two/11.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
+						<h4 class="this-title">gold bedroom</h4>
+					</div>
+				</div>
+			</div>
+			
+
+			<div class="item">
+				<img src="/static/hotel-static/images/gallery-two/22.jpg" alt="">
+				<div class="this-overlay">
+					<div class="this-texts">
+						<a href="/static/hotel-static/images/gallery-two/22.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
+						<h4 class="this-title">Platinum bedroom</h4>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/hotel-static/images/gallery-two/33.jpg" alt="">
+				<div class="this-overlay">
+					<div class="this-texts">
+						<a href="/static/hotel-static/images/gallery-two/33.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
+						<h4 class="this-title">swiming pool</h4>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/hotel-static/images/gallery-two/44.jpg" alt="">
+				<div class="this-overlay">
+					<div class="this-texts">
+						<a href="/static/hotel-static/images/gallery-two/44.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
+						<h4 class="this-title">our restaurant</h4>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="/static/hotel-static/images/gallery-two/55.jpg" alt="">
+				<div class="this-overlay">
+					<div class="this-texts">
+						<a href="/static/hotel-static/images/gallery-two/55.jpg" class="fancybox" rel="help"><i class="icon icon-Search"></i></a>
+						<h4 class="this-title">exterior view</h4>
+					</div>
+				</div>
+			</div>
+         </div>
+        </div>
+    </section>     
+
+
+ <!-- Welcome banner  style-->
+<div class="nasir-subscribe-form-row row">
+	<div class="container">
+		<div class="row this-dashed">
+			<div class="this-texts">
+				<h2>STAY TUNED WITH US</h2>
+				<h3>Get our updated offers, discounts, events and much more!</h3>
+			</div>
+			<form class="this-form input-group" action="#" method="post">
+				<input type="email" class="form-control" placeholder="Enter your email address">
+				<span class="input-group-addon">
+					<button type="submit" class="res-btn">subscribe<i class="fa fa-arrow-right"></i></button>
+				</span>
+			</form>
+		</div>
+	</div>
+</div>
+    
+ 
+
+{% endblock %}
+
